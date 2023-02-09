@@ -52,11 +52,11 @@ pass.scan(/./)
 #  => "abc1234xy.z"
 ```
 
-### [ ]
+### `[ ]`
 
 Square brackets are used to filter and return all instances in the string of the specific passed inside it.
 
-If you want the instances of the letters `abc` from the password `asdaojcvfscbadac`, wouldn't use this regex:
+If you want the instances of the letters `abc` from the password `asdaojcvfscbadac`, wouldn't use this regex because it will be looking for a string that has the `abc` characters in succession:
 
 ```ruby
 pass = "asdaojcvfscbadac"
@@ -72,4 +72,20 @@ pass = "asdaojcvfscbadac"
 
 pass.scan(/[abc]/)
 # => ["a", "a", "c", "c", "b", "a", "a", "c"]
-```# regex-practice
+```
+
+#### `[^ ]`
+
+The previous example filtered in characters whose instances we wanted.
+
+Inserting a `^` sign before a pattern will result in those characters not being returned.
+
+```ruby
+pass = "asdaojcvfscbadac"
+
+pp pass.scan(/[^abc]/)
+# => ["s", "d", "o", "j", "v", "f", "s", "d"]
+```
+
+### Character ranges
+When you want to match a character in a list of sequential characters,
