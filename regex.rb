@@ -21,3 +21,12 @@ pass = "asdaojcvfscbadac"
 pp pass.scan(/[^abc]/)
 
 # Character ranges
+# [a-z]
+
+name = "Washigton"
+
+p name.scan(/[a-i]/)
+
+name = "Washigton"
+
+p name.scan(/[^a-i]/)

@@ -27,6 +27,10 @@ Ruby Regular Expressions are written between two forward slashes to differentiat
 
 Metacharacters are predefined shorthand in regex to match specific characters.
 
+##### Glossary:
+**Characters** means all _letters_, _numbers_ and _underscores_.
+**Digits** means numbers between 0 and 9.
+
 #### `\d`
 Can be used in place of any digit between 0 and 9.
 The terminating backslash `\` distinguishes it from the regular `d` character.
@@ -88,4 +92,23 @@ pp pass.scan(/[^abc]/)
 ```
 
 ### Character ranges
-When you want to match a character in a list of sequential characters,
+When you want to match (a) character(s) in a list of sequential characters. Inside square brackets use a dash `-` between two characters that exist sequentially to filter.
+
+This regex will only match characters between the the letters a and i
+
+```ruby
+name = "Washigton"
+
+name.scan(/[a-i]/)
+# => ["a", "h", "i", "g"]
+```
+
+If you use a hat (`^`) before the range of characters, it will exclude those characters.
+Using the same ecxample as above:
+
+```ruby
+name = "Washigton"
+
+name.scan(/[^a-i]/)
+# => ["W", "s", "t", "o", "n"]
+```
