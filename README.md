@@ -24,19 +24,21 @@ Ruby Regular Expressions are written between two forward slashes to differentiat
 /your regex goes in here/
 ```
 
+##### Glossary:
+
+As far as Regex is concerned:
+
+**Characters** means all _letters_ (lowercase and uppercase), _numbers_ and _underscores_.
+
+**Digits** means numbers between 0 and 9.
+
+**Whitespace** means _regular space_, _whitespace_ and _newline_
+
 ### Deep-Dive into Metacharacters
 
 Metacharacters are predefined shorthand in regex to match specific characters.
 
-##### Glossary:
-As far as Regex is concerned:
-
-**Characters** means all _letters_ (lowercase and uppercase), _numbers_ and _underscores_.
-**Digits** means numbers between 0 and 9.
-***Whitespace** means _regular space_, _whitespace_ and _newline_
-
-
-#### `.`
+#### The Dot `.`
 
 The dot is a wildcard character that can be used to match any character whatsoever except a new line.
 
@@ -83,7 +85,6 @@ pp pass.scan(/[^abc]/)
 # => ["s", "d", "o", "j", "v", "f", "s", "d"]
 ```
 
-
 ### Character Ranges
 
 When you want to match (a) character(s) in a list of sequential characters. Inside square brackets use a dash `-` between two characters that exist sequentially to filter.
@@ -109,9 +110,10 @@ name.scan(/[^a-i]/)
 
 There are several shorthand methods for characters ranges:
 
-	i. \w - matches all characters.
-	ii. \d - matches all digits.
-	iii. \s - matches all whitespace characters.
+    i. \w - matches all characters.
+    ii. \d - matches all digits.
+    iii. \s - matches all whitespace characters.
+
 #### `\w`
 
 The `\w` metacharacter is equal to the entire range of characters A-Z, a-z, 0-9 and underscores.
@@ -120,7 +122,7 @@ The `\w` metacharacter is equal to the entire range of characters A-Z, a-z, 0-9 
 we_want_only_characters = "dknj2324#@$#()rqdk^%#@(sjaif923401ad"
 
 we_want_only_characters.scan(/\w+/)
-# => ["dknj2324", "rqdk", "sjaif923401ad"] 
+# => ["dknj2324", "rqdk", "sjaif923401ad"]
 
 # returns only characters, and not special symbols.
 ```
@@ -151,6 +153,6 @@ pass.scan(/\d/)
 ```
 
 ### Repetition of ranges.
-The previous examples show us how to match a range of characters, but what if we want match a number of repetition of characters?
-Say we have the text 
 
+The previous examples show us how to match a range of characters, but what if we want match a number of repetition of characters?
+Say we have the text
