@@ -30,3 +30,7 @@ p name.scan(/[a-i]/)
 name = "Washigton"
 
 p name.scan(/[^a-i]/)
+
+chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+p chars.scan(/[A-Z]/)
